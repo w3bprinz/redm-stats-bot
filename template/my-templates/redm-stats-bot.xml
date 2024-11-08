@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>redm-stats-bot</Name>
+  <Repository>w3bprinz/redm-stats-bot</Repository>
+  <Registry>https://github.com/w3bprinz/redm-stats-bot</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/w3bprinz/redm-stats-bot</Support>
+  <Overview>RedM Server Stats Discord Bot</Overview>
+  <Category>Tools: Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/w3bprinz/redm-stats-bot/main/icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Config Name="Config File" Target="/app/config.py" Default="" Mode="rw" Description="Konfigurationsdatei" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/redm-stats-bot/config.py</Config>
+  <Config Name="Stats Directory" Target="/app/stats" Default="" Mode="rw" Description="Statistik-Verzeichnis" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/redm-stats-bot/stats</Config>
+</Container> 
