@@ -1,11 +1,10 @@
 # Base image
-FROM python:3.9-slim
+FROM node:18-slim
 
-# Install Chrome and dependencies
+# Install Chrome dependencies
 RUN apt-get update && apt-get install -y \
     wget \
     gnupg \
-    unzip \
     chromium \
     chromium-driver \
     && rm -rf /var/lib/apt/lists/*
@@ -13,18 +12,21 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements first to leverage Docker cache
-COPY requirements.txt .
+# Copy package files
+COPY package*.json ./
 
-# Install Python dependencies with pip upgrade
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Install dependencies
+RUN npm install
 
-# Copy the rest of the application
+# Copy application files
 COPY . .
 
 # Create config from example if not exists
-RUN if [ ! -f config.py ]; then cp config.example.py config.py; fi
+RUN if [ ! -f config.js ]; then cp config.example.js config.js; fi
+
+# Environment variables for Puppeteer
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 # Run the bot
-CMD ["python", "main.py"] 
+CMD ["npm", "start"]

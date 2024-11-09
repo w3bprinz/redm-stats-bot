@@ -1,37 +1,33 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+# Node.js spezifisch
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
-# Konfigurationsdateien
-config.py
+# Umgebungsvariablen und Konfiguration
+.env
+config.js
+
+# Runtime Daten
 stats_db.json
 
 # Logs
+logs/
 *.log
 
-# Selenium
-.selenium/
+# Betriebssystem
+.DS_Store
+Thumbs.db
 
-# IDE
+# IDE/Editor Ordner
 .idea/
 .vscode/
 *.swp
-*.swo 
+*.swo
+
+# Temporäre Dateien
+tmp/
+temp/
+
+# Debug Dateien
+.node-debug/

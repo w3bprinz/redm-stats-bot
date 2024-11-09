@@ -1,0 +1,12 @@
+version: "3"
+services:
+  discord-bot:
+    build:
+      context: https://github.com/w3bprinz/redm-stats-bot.git#main
+    container_name: redm-stats-bot
+    volumes:
+      - /mnt/user/appdata/redm-stats-bot/config.py:/app/config.py
+      - /mnt/user/appdata/redm-stats-bot/stats_db.json:/app/stats_db.json
+    environment:
+      - TZ=Europe/Berlin
+    restart: unless-stopped

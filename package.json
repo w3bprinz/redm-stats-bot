@@ -1,0 +1,12 @@
+{
+  "name": "redm-stats-bot",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "puppeteer": "^21.7.0"
+  },
+  "scripts": {
+    "start": "node main.js"
+  }
+}
