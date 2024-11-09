@@ -1,5 +1,8 @@
-# Base image
-FROM node:18-slim
+# Neuere Node.js Version
+FROM node:20-slim
+
+# Update npm to latest version
+RUN npm install -g npm@latest
 
 # Install Chrome dependencies
 RUN apt-get update && apt-get install -y \
@@ -21,8 +24,8 @@ RUN npm install
 # Copy application files
 COPY . .
 
-# Create config from example if not exists
-RUN if [ ! -f config.js ]; then cp config.example.js config.js; fi
+# Copy example config if not exists
+COPY config.example.js config.js
 
 # Environment variables for Puppeteer
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
