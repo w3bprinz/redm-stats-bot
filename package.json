@@ -4,7 +4,7 @@
   "main": "main.js",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "puppeteer": "^21.7.0"
+    "puppeteer": "^22.8.2"
   },
   "scripts": {
     "start": "node main.js"
